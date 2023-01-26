@@ -76,5 +76,7 @@ dependencies {
     api 'com.google.dagger:dagger-android-support:2.44.2'
     kapt 'com.google.dagger:dagger-android-processor:2.44.2'
 
+    //easy permission
+    implementation 'pub.devrel:easypermissions:3.0.0'
 
 }
