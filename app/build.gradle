@@ -79,4 +79,8 @@ dependencies {
     //easy permission
     implementation 'pub.devrel:easypermissions:3.0.0'
 
+    //MpAndroid Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+
 }
