@@ -87,5 +87,9 @@ dependencies {
     //MpAndroid Chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    task wrapper(type: Wrapper){
+        gradleVersion = '7.2'
+    }
+    tasks.register("prepareKotlinBuildScriptModel"){}
 
 }

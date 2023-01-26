@@ -11,35 +11,35 @@ interface RunDao {
     suspend fun insertRun(run: Run)
 
     @Delete
-    suspend fun deleteRun(run: Run)
+     fun deleteRun(run: Run)
 
-    @Query("SELECT * FROM running_table ORDERED BY timestamp DESC")
-    suspend fun getRunsSortedByDate():LiveData<List<Run>>
-
-
-    @Query("SELECT * FROM running_table ORDERED BY averageSpeedKPH DESC")
-    suspend fun getRunsSortedByAverageSpeed():LiveData<List<Run>>
+    @Query("SELECT * FROM running_table ORDER BY timestamp DESC;")
+     fun getRunsSortedByDate():LiveData<List<Run>>
 
 
-    @Query("SELECT * FROM running_table ORDERED BY distanceInMeter DESC")
-    suspend fun getRunsSortedByDistance():LiveData<List<Run>>
+    @Query("SELECT * FROM running_table ORDER BY averageSpeedKPH DESC;")
+     fun getRunsSortedByAverageSpeed():LiveData<List<Run>>
 
 
-    @Query("SELECT * FROM running_table ORDERED BY timeInMillis DESC")
-    suspend fun getRunsSortedByRunTime():LiveData<List<Run>>
-
-    @Query("SELECT * FROM running_table ORDERED BY caloriesBurned DESC")
-    suspend fun getRunsSortedByCalories():LiveData<List<Run>>
+    @Query("SELECT * FROM running_table ORDER BY distanceInMeter DESC;")
+     fun getRunsSortedByDistance():LiveData<List<Run>>
 
 
-    @Query("SELECT SUM(distanceInMeter) FROM running_table")
-    suspend fun getTotalDistance():LiveData<Int>
+    @Query("SELECT * FROM running_table ORDER BY timeInMillis DESC;")
+     fun getRunsSortedByRunTime():LiveData<List<Run>>
 
-    @Query("SELECT SUM(caloriesBurned) FROM running_table")
-    suspend fun getTotalCalories():LiveData<Int>
+    @Query("SELECT * FROM running_table ORDER BY caloriesBurned DESC;")
+     fun getRunsSortedByCalories():LiveData<List<Run>>
 
-    @Query("SELECT SUM(timeInMillis) FROM running_table")
-    suspend fun getTotalTime():LiveData<Long>
+
+    @Query("SELECT SUM(distanceInMeter) FROM running_table;")
+     fun getTotalDistance():LiveData<Int>
+
+    @Query("SELECT SUM(caloriesBurned) FROM running_table;")
+     fun getTotalCalories():LiveData<Int>
+
+    @Query("SELECT SUM(timeInMillis) FROM running_table;")
+     fun getTotalTime():LiveData<Long>
 
 
 
