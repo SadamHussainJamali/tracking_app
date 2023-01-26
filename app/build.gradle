@@ -49,7 +49,15 @@ dependencies {
     //room
     implementation "androidx.room:room-runtime:2.5.0"
     kapt "androidx.room:room-compiler:2.5.0"
+    //kotlin room support libraries
+    implementation 'androidx.room:room-ktx:2.5.0'
 
 
+    //coroutine generals
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
 
+    //coroutine life-cycle-support
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
 }
