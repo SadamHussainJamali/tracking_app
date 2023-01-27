@@ -7,40 +7,39 @@ import androidx.room.*
 @Dao
 interface RunDao {
 
-    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRun(run: Run)
 
     @Delete
-     fun deleteRun(run: Run)
+    suspend fun deleteRun(run: Run)
 
     @Query("SELECT * FROM running_table ORDER BY timestamp DESC;")
-     fun getRunsSortedByDate():LiveData<List<Run>>
+    fun getRunsSortedByDate(): LiveData<List<Run>>
 
 
     @Query("SELECT * FROM running_table ORDER BY averageSpeedKPH DESC;")
-     fun getRunsSortedByAverageSpeed():LiveData<List<Run>>
+    fun getRunsSortedByAverageSpeed(): LiveData<List<Run>>
 
 
     @Query("SELECT * FROM running_table ORDER BY distanceInMeter DESC;")
-     fun getRunsSortedByDistance():LiveData<List<Run>>
+    fun getRunsSortedByDistance(): LiveData<List<Run>>
 
 
     @Query("SELECT * FROM running_table ORDER BY timeInMillis DESC;")
-     fun getRunsSortedByRunTime():LiveData<List<Run>>
+    fun getRunsSortedByRunTime(): LiveData<List<Run>>
 
     @Query("SELECT * FROM running_table ORDER BY caloriesBurned DESC;")
-     fun getRunsSortedByCalories():LiveData<List<Run>>
+    fun getRunsSortedByCalories(): LiveData<List<Run>>
 
 
     @Query("SELECT SUM(distanceInMeter) FROM running_table;")
-     fun getTotalDistance():LiveData<Int>
+    fun getTotalDistance(): LiveData<Int>
 
     @Query("SELECT SUM(caloriesBurned) FROM running_table;")
-     fun getTotalCalories():LiveData<Int>
+    fun getTotalCalories(): LiveData<Int>
 
     @Query("SELECT SUM(timeInMillis) FROM running_table;")
-     fun getTotalTime():LiveData<Long>
-
+    fun getTotalTime(): LiveData<Long>
 
 
 }
