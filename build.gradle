@@ -13,6 +13,7 @@ buildscript {
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.44"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
     }
 
 //
@@ -30,5 +31,7 @@ plugins {
     id 'com.android.library' version '7.4.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
     id 'androidx.navigation.safeargs' version '2.4.2' apply false
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
+
 }
 

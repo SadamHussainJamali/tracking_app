@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+
 }
 
 android {
@@ -105,6 +107,9 @@ dependencies {
 
     //MpAndroid Chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //secrate gradle plugin
+
 
     task wrapper(type: Wrapper){
         gradleVersion = '7.2'
